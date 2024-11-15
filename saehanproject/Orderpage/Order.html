@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새한문화사 - 주문 확인</title>
+    <link rel="stylesheet" href="Order.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="../Home/Home.html" id="HomeLink" class="nav-item">새한문화사</a>
+        </div>
+        <nav class="main-nav">
+            <a href="#" id="loginLink" class="nav-item">로그인</a>
+            <a href="../Join/Join.html" class="nav-item">회원가입</a>
+            <a href="../Noticepage/Notice.html" class="nav-item">공지</a>
+            <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
+        </nav>
+    </header>
+    <div class="order-confirmation-container">
+        <h2>주문 확인</h2>
+        <div class="order-details">
+            <h3>주문 내역</h3>
+            <div id="orderSummary"></div>
+        </div>
+        <div class="shipping-info">
+            <h3>배송 정보</h3>
+            <form id="shippingForm">
+                <div class="form-group">
+                    <label for="recipientName">받는 분 이름</label>
+                    <input type="text" id="recipientName" name="recipientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipientPhone">연락처</label>
+                    <input type="tel" id="recipientPhone" name="recipientPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="shippingAddress">배송지 주소</label>
+                    <input type="text" id="shippingAddress" name="shippingAddress" required>
+                </div>
+                <button type="submit" class="confirm-order-button">주문 완료</button>
+            </form>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <p>Tel 02-1234-1234</p>
+        <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
+    </div>
+    <script src="./Order.js"></script>
+</body>
+</html>
