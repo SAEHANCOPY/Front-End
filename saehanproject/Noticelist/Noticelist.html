@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>새한문화사 로그인</title>
-    <link rel="stylesheet" href="./Login.css">
+    <title>새한문화사 - 공지사항</title>
+    <link rel="stylesheet" href="./Noticelist.css">
 </head>
 <body>
     <header class="main-header">
@@ -12,29 +12,24 @@
             <a href="../Home/Home.html" id="HomeLink" class="nav-item">새한문화사</a>
         </div>
         <nav class="main-nav">
-            <a href="../Login/Login.html" id="loginLink" class="nav-item">로그인</a>
+            <a href="#" id="loginLink" class="nav-item">로그인</a>
             <a href="../Join/Join.html" class="nav-item">회원가입</a>
             <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
             <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
-    <div class="login-container">
-        <h1>새한문화사</h1>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="아이디" required>
-            <input type="password" id="password" placeholder="비밀번호" required>
-            <button type="submit">로그인</button>
-        </form>
-        <p id="errorMessage" class="error"></p>
-        <nav class="nav">
-            <a href="../Join/Join.html" class="item">회원가입</a>
-        </nav>
-    </div>
+    <main class="container">
+        <h1>공지사항</h1>
+        <div id="adminControls" style="display: none;">
+            <button id="createNoticeBtn">공지 작성</button>
+        </div>
+        <div id="noticeList"></div>
+    </main>
     <div class="bottom-container">
         <p>Tel 02-1234-1234</p>
         <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
     </div>
-    <script src="./Login.js"></script>
+    <script src="./Noticelist.js"></script>
 </body>
 </html>

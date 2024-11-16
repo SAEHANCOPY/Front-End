@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새한문화사 - 공지사항 작성</title>
+    <link rel="stylesheet" href="./Noticecreate.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="../Home/Home.html" id="HomeLink" class="nav-item">새한문화사</a>
+        </div>
+        <nav class="main-nav">
+            <a href="#" id="loginLink" class="nav-item">로그인</a>
+            <a href="../Join/Join.html" class="nav-item">회원가입</a>
+            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>공지사항 작성</h1>
+        <form id="noticeForm">
+            <div class="form-group">
+                <label for="noticeTitle">제목</label>
+                <input type="text" id="noticeTitle" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="noticeContent">내용</label>
+                <textarea id="noticeContent" name="content" rows="10" required></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">등록</button>
+                <button type="button" id="cancelBtn" class="cancel-btn">취소</button>
+            </div>
+        </form>
+    </main>
+    <div class="bottom-container">
+        <p>Tel 02-1234-1234</p>
+        <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
+    </div>
+    <script src="./Noticecreate.js"></script>
+</body>
+</html>
