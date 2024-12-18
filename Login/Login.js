@@ -5,11 +5,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('errorMessage');
 
-    const isAdmin = username === 'admin';
+    const isAdmin = username === '1102';
 
     const apiUrl = isAdmin 
-        ? 'https://43.202.235.179/public/loginAdmin.php' // 관리자 로그인 API
-        : 'https://43.202.235.179/public/login.php';     // 사용자 로그인 API
+        ? 'https://www.saehan-pulis-hing.com/public/loginAdmin.php' // 관리자 로그인 API
+        : 'https://www.saehan-pulis-hing.com/public/login.php';     // 사용자 로그인 API
 
     const formData = new URLSearchParams();
     formData.append('id', username);

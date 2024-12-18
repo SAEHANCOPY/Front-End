@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('detailAddress', detailAddress);
 
             // fetch API를 사용하여 서버로 POST 요청 보내기
-            fetch('http://43.202.235.179/public/register.php', {
+            fetch('https://www.saehan-pulis-hing.com/public/register.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
