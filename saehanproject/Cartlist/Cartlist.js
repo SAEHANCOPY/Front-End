@@ -36,11 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${order.id}</td>
-                <td>${order.date}</td>
                 <td>${order.product}</td>
                 <td>${order.total}</td>
-                <td>${order.address}</td>
-                <td>${order.status}</td>
                 <td><button class="detail-button" data-id="${order.id}">상세 보기</button></td>
             `;
             orderTableBody.appendChild(row);
@@ -51,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
     orderTableBody.addEventListener('click', function(e) {
         if (e.target.classList.contains('detail-button')) {
             const orderId = e.target.getAttribute('data-id');
-            window.location.href = '../Orderdetail/Orderdetail.html';
+            //alert(`주문 번호 ${orderId}의 상세 정보를 보여줍니다.`);
             // 여기에 상세 정보를 보여주는 로직을 구현할 수 있습니다.
             // 예: 모달 창을 열거나 새 페이지로 이동
+            window.location.href = `../Cart/Cart.html`;
         }
     });
 

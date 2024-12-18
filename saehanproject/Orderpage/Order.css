@@ -68,7 +68,6 @@ body {
 
 .form-group {
     margin-bottom: 15px;
-    width: 100%;
 }
 
 .form-group label {
@@ -108,4 +107,47 @@ body {
     padding-right: 70px;
     font-size: 13px;
     height: 70px;
+}
+
+.manuscript-upload {
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.manuscript-upload h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.manuscript-upload .form-group {
+    margin-bottom: 15px;
+}
+
+.manuscript-upload input[type="file"] {
+    width: 783px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 파일 input 스타일 조정 */
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #B87C4E;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #A66C3E;
 }

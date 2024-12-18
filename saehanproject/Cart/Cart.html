@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>새한문화사 - 주문 목록</title>
-    <link rel="stylesheet" href="./Orderlist.css">
+    <title>새한문화사 - 장바구니</title>
+    <link rel="stylesheet" href="Cart.css">
 </head>
 <body>
     <header class="main-header">
@@ -19,29 +19,22 @@
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
-    <main class="order-list-container">
-        <h1>주문 목록</h1>
-        <table class="order-table">
-            <thead>
-                <tr>
-                    <th>주문 번호</th>
-                    <th>주문 날짜</th>
-                    <th>상품 정보</th>
-                    <th>총 금액</th>
-                    <th>배송지</th>
-                    <th>상태</th>
-                    <th>상세 보기</th>
-                </tr>
-            </thead>
-            <tbody id="orderTableBody">
-                <!-- 주문 목록이 여기에 동적으로 추가됩니다 -->
-            </tbody>
-        </table>
-    </main>
+    <div class="order-confirmation-container">
+        <h2>장바구니</h2>
+        <div class="order-details">
+            <h3>견적 내역</h3>
+            <div id="orderSummary"></div>
+        </div>
+        <div class="shipping-info">
+            <form id="shippingForm">
+                <button type="submit" class="confirm-order-button">주문 하러 가기</button>
+            </form>
+        </div>
+    </div>
     <div class="bottom-container">
         <p>Tel 02-1234-1234</p>
         <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
     </div>
-    <script src="./Orderlist.js"></script>
+    <script src="./Cart.js"></script>
 </body>
 </html>

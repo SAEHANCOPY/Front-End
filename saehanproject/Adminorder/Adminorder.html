@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새한문화사 - 주문 상세 정보</title>
+    <link rel="stylesheet" href="Adminorder.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="../Home/Home.html" id="HomeLink" class="nav-item">새한문화사</a>
+        </div>
+        <nav class="main-nav">
+            <a href="#" id="loginLink" class="nav-item">로그인</a>
+            <a href="../Adminorderlist/Adminorderlist.html" class="nav-item">주문 관리</a>
+            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>주문 상세 정보</h1>
+        <div id="orderDetails">
+            <!-- 주문 상세 정보가 여기에 동적으로 추가됩니다 -->
+        </div>
+        <div class="status-update">
+            <label for="statusSelect">상태 변경:</label>
+            <select id="statusSelect">
+                <option value="주문 접수">주문 접수</option>
+                <option value="제작 중">제작 중</option>
+                <option value="배송 준비">배송 준비</option>
+                <option value="배송 중">배송 중</option>
+                <option value="배송 완료">배송 완료</option>
+            </select>
+            <button id="updateStatusBtn">상태 업데이트</button>
+        </div>
+        <button id="backBtn" class="back-btn">목록으로 돌아가기</button>
+    </div>
+    <script src="Adminorder.js"></script>
+</body>
+</html>

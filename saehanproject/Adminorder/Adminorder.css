@@ -2,9 +2,6 @@ body {
     font-family: 'Malgun Gothic', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     background-color: #f5f5f5;
 }
 
@@ -40,8 +37,7 @@ body {
 }
 
 .container {
-    flex: 1;
-    width: 800px;
+    max-width: 800px;
     margin: 40px auto;
     padding: 20px;
     background-color: white;
@@ -55,13 +51,33 @@ h1 {
     margin-bottom: 20px;
 }
 
-#adminControls {
+.order-section {
     margin-bottom: 20px;
-    text-align: right;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
 }
 
-#createNoticeBtn {
-    padding: 10px 20px;
+.order-section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.status-update {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#statusSelect {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#updateStatusBtn, .back-btn {
+    padding: 8px 16px;
     background-color: #B87C4E;
     color: white;
     border: none;
@@ -69,53 +85,10 @@ h1 {
     cursor: pointer;
 }
 
-#createNoticeBtn:hover {
+#updateStatusBtn:hover, .back-btn:hover {
     background-color: #A66C3E;
 }
 
-.notice-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.notice-title {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-}
-
-.notice-title:hover {
-    color: #B87C4E;
-}
-
-.notice-date {
-    font-size: 14px;
-    color: #666;
-}
-
-.delete-btn {
-    padding: 5px 10px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #ff3333;
-}
-
-.bottom-container {
-    background-color: #C7C7C7;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 70px;
-    padding-right: 70px;
-    font-size: 13px;
-    height: 70px;
+.back-btn {
+    margin-top: 20px;
 }

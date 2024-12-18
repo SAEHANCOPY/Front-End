@@ -22,32 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         orderSummary.innerHTML = '<p>주문 정보를 불러올 수 없습니다.</p>';
     }
 
-    // 주문 완료 폼 제출 처리
+    // 주문 화면 이동
     const shippingForm = document.getElementById('shippingForm');
     shippingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        const manuscriptFile = document.getElementById('manuscriptFile').files[0];
-        if (manuscriptFile) {
-            console.log('원고 파일:', manuscriptFile.name);
-        }
-        
-        const shippingInfo = {
-            recipientName: document.getElementById('recipientName').value,
-            recipientPhone: document.getElementById('recipientPhone').value,
-            shippingAddress: document.getElementById('shippingAddress').value,
-            manuscriptFileName: manuscriptFile ? manuscriptFile.name : 'No file uploaded'
-        };
-
-        // 여기에서 주문 정보와 배송 정보를 서버로 전송하는 로직을 구현해야 합니다.
-        // 예를 들어, fetch API를 사용하여 서버에 데이터를 전송할 수 있습니다.
-
-        console.log('주문 정보:', orderDetails);
-        console.log('배송 정보:', shippingInfo);
-
-        // 주문 완료 메시지 표시
-        alert('주문이 완료되었습니다. 감사합니다!');
-        // 주문 완료 후 홈페이지로 리다이렉트
-        window.location.href = '../Orderlistpage/Orderlist.html';
+        window.location.href = '../Orderpage/Order.html';
     });
 });

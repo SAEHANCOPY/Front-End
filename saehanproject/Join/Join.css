@@ -61,7 +61,7 @@ body {
 }
 
 .form-group input {
-    width: 100%;
+    width: 482px;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -111,4 +111,38 @@ body {
     padding-right: 70px;
     font-size: 13px;
     height: 70px;
+}
+
+/* 우편번호 그룹 스타일 */
+.postcode-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-with-button input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid white;
+    align-items: center;
+}
+
+.input-with-button button {
+    cursor: pointer;
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

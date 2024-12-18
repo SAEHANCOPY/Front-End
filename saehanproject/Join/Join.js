@@ -40,12 +40,44 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
-        // 유효성 검사 통과 시 폼 제출
+        // 주소 관련 입력값 가져오기
+        const postcode = document.getElementById('postcode').value;
+        const address = document.getElementById('address').value;
+        const detailAddress = document.getElementById('detailAddress').value;
+
+        // 유효성 검사 통과 시 서버로 데이터 전송
         if (isValid) {
-            // 여기서 실제로는 서버에 데이터를 전송하고 응답을 처리해야 합니다.
-            // 이 예제에서는 간단히 로그인 페이지로 리다이렉트합니다.
-            alert('회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.');
-            window.location.href = 'login.html';
+            const formData = new URLSearchParams();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('email', email);
+            formData.append('password', password);
+            formData.append('confirmedPassword', confirmPasswordInput.value);
+            formData.append('phoneNumber', document.getElementById('phone').value);
+            formData.append('id', username);
+            formData.append('postcode', postcode);
+            formData.append('address', address);
+            formData.append('detailAddress', detailAddress);
+
+            // fetch API를 사용하여 서버로 POST 요청 보내기
+            fetch('http://43.202.235.179/public/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData.toString()
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('회원가입이 성공적으로 완료되었습니다!');
+                    window.location.href = '../Login/Login.html'; // 로그인 페이지로 이동
+                } else {
+                    alert('회원가입에 실패했습니다. 다시 시도해주세요.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('서버 오류가 발생했습니다. 나중에 다시 시도해주세요.');
+            });
         }
     });
 

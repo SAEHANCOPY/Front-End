@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>새한문화사 - 주문 목록</title>
-    <link rel="stylesheet" href="./Orderlist.css">
+    <title>새한문화사 - 관리자 주문 목록</title>
+    <link rel="stylesheet" href="Adminorderlist.css">
 </head>
 <body>
     <header class="main-header">
@@ -13,35 +13,32 @@
         </div>
         <nav class="main-nav">
             <a href="#" id="loginLink" class="nav-item">로그인</a>
-            <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
-            <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Adminorderlist/Adminorderlist.html" class="nav-item">주문 관리</a>
             <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
-    <main class="order-list-container">
-        <h1>주문 목록</h1>
-        <table class="order-table">
+    <div class="container">
+        <h1>주문 관리</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="고객명 또는 주문번호로 검색">
+        </div>
+        <table id="orderTable">
             <thead>
                 <tr>
-                    <th>주문 번호</th>
-                    <th>주문 날짜</th>
-                    <th>상품 정보</th>
+                    <th>주문번호</th>
+                    <th>고객명</th>
+                    <th>주문일</th>
                     <th>총 금액</th>
-                    <th>배송지</th>
                     <th>상태</th>
-                    <th>상세 보기</th>
+                    <th>상세보기</th>
                 </tr>
             </thead>
             <tbody id="orderTableBody">
                 <!-- 주문 목록이 여기에 동적으로 추가됩니다 -->
             </tbody>
         </table>
-    </main>
-    <div class="bottom-container">
-        <p>Tel 02-1234-1234</p>
-        <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
     </div>
-    <script src="./Orderlist.js"></script>
+    <script src="Adminorderlist.js"></script>
 </body>
 </html>

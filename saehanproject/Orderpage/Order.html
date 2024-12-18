@@ -13,9 +13,9 @@
         </div>
         <nav class="main-nav">
             <a href="#" id="loginLink" class="nav-item">로그인</a>
-            <a href="../Join/Join.html" class="nav-item">회원가입</a>
-            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
             <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
@@ -24,6 +24,14 @@
         <div class="order-details">
             <h3>주문 내역</h3>
             <div id="orderSummary"></div>
+        </div>
+        <div class="manuscript-upload">
+            <h3>원고 파일</h3>
+            <div class="form-group">
+                <label for="manuscriptFile">원고 파일 첨부</label>
+                <input type="file" id="manuscriptFile" name="manuscriptFile" accept=".pdf,.doc,.docx">
+                <p class="file-info">허용된 파일 형식: PDF, DOC, DOCX</p>
+            </div>
         </div>
         <div class="shipping-info">
             <h3>배송 정보</h3>
@@ -39,6 +47,10 @@
                 <div class="form-group">
                     <label for="shippingAddress">배송지 주소</label>
                     <input type="text" id="shippingAddress" name="shippingAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="shippingAddress">메모</label>
+                    <input type="text" id="shippingAddress" name="extraMemo" required>
                 </div>
                 <button type="submit" class="confirm-order-button">주문 완료</button>
             </form>

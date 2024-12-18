@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 용지대 가격 계산 
         let paperPrice = basePrice.paper;
         //1. 표지 계산: (부수/6 + 120) * 용지 종류
-        paperPrice += (quantity / 6 + 120) * paperTypePrice;
+        paperPrice += (quantity / 6 + 120) * (223,830 / 500 * 0.75);
         //2. 내지 계산: {(부수 + 200)*페이지 수 / 규격 / 부수} * 용지 종류
         paperPrice += (((quantity + 200) * pageNum) / (paperSizePrice * quantity)) * innerPaperTypePrice;
    
@@ -195,7 +195,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 바로주문 버튼 클릭 이벤트 처리
+    // 장바구니 버튼 클릭 이벤트 처리
+    const quoteButton = document.querySelector('.quote-button');
+    quoteButton.addEventListener('click', function () {
+        // 장바구니에 전달할 데이터 준비
+        const formData = new URLSearchParams();
+        formData.append('pages', document.getElementById('pages').value); // 페이지 수
+        formData.append('copies', document.getElementById('quantity').value); // 부수
+        formData.append('paper_size', document.getElementById('paperSize').value); // 규격
+        formData.append('paper_type', document.getElementById('paperType').value); // 용지 종류
+        formData.append('post_process', document.querySelector('input[name="process"]:checked')?.value || ''); // 후가공
+        formData.append('color', document.getElementById('frontColorType').value); // 색상
+        formData.append('edit_type', document.getElementById('paperEdit').value); // 편집 타입
+        formData.append('total_amount', document.getElementById('totalPrice').textContent.replace(/[^0-9]/g, '')); // 총 금액
+        formData.append('action', 'cart'); // 장바구니 액션
+
+        // API 요청
+        fetch('http://43.202.235.179/public/cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData.toString(),
+            credentials: 'include' // 쿠키를 포함하여 세션 유지
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message || '장바구니에 성공적으로 추가되었습니다.');
+            } else {
+                alert(data.message || '장바구니 추가에 실패했습니다.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+        });
+    });
+
+
+// 바로주문 버튼 클릭 이벤트 처리
     const orderButton = document.querySelector('.order-button');
     orderButton.addEventListener('click', function() {
         const orderDetails = {
@@ -213,5 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // 주문 정보를 URL 파라미터로 인코딩하여 주문 확인 페이지로 이동
         const orderDetailsParam = encodeURIComponent(JSON.stringify(orderDetails));
         window.location.href = `../Orderpage/Order.html?orderDetails=${orderDetailsParam}`;
+        alert()
     });
 });
