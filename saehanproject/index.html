@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새한문화사 - 인쇄 견적 계산기</title>
+    <link rel="stylesheet" href="./Home/Home.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="./Home.html" id="HomeLink" class="nav-item">새한문화사</a>
+        </div>
+        <nav class="main-nav">
+            <a href="#" id="loginLink" class="nav-item">로그인</a>
+            <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
+            <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
+        </nav>
+    </header>
+    <div class="quote-container">
+        <div class="preview-section">
+            <img src="../assets/book_fall.png" alt="제품 미리보기" class="preview-image">
+        </div>
+        
+        <div class="options-section">
+            <div class="option-group">
+                <label>규격</label>
+                <div class="option-row">
+                    <select id="paperSize">
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                        <option value="B5">B5</option>
+                        <option value="B6">B6</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>편집 방법</label>
+                <div class="option-row">
+                    <select id="paperEdit">
+                        <option value="Edit">1page씩 작업 사방 4mm여백(고정)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>수량</label>
+                <div class="quantity-input">
+                    <select id="quantity">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="1000">1000</option>
+                        <option value="2000">2000</option>
+                        <option value="3000">3000</option>
+                        <option value="4000">4000</option>
+                        <option value="5000">5000</option>
+                        <option value="6000">6000</option>
+                        <option value="7000">7000</option>
+                        <option value="8000">8000</option>
+                        <option value="9000">9000</option>
+                        <option value="10000">10000</option>
+                        <option value="20000">20000</option>
+                        <option value="30000">30000</option>
+                    </select>
+                    <span>부</span>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>표지</label>
+                <div class="option-row">
+                    <select id="paperType">
+                        <option value="미색모조">미색모조</option>
+                        <option value="모조지">모조지</option>
+                        <option value="스노우지">스노우지</option>
+                        <option value="아르떼">아르떼</option>
+                        <option value="스노우지">랑데부</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>내지</label>
+                <p>용지 선택</p>
+                <div class="option-row">
+                    <select id="innerPaperType">
+                        <option value="미색모조">미색모조</option>
+                        <option value="모조지">모조지</option>
+                        <option value="스노우지">스노우지</option>
+                        <option value="아르떼">아르떼</option>
+                        <option value="스노우지">랑데부</option>
+                    </select>
+                </div>
+
+                <p>인쇄도수</p>
+                <div class="option-row">
+                    <div class="print-option">
+                        <select id="frontColorType">
+                            <option value="양면 8도">양면 8도</option>
+                            <option value="양면 4도">양면 4도</option>
+                            <option value="2도 흑백">2도 흑백</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p>수량</p>
+                <div class="page-input">
+                    <input type="text" id="pages" placeholder="직접입력" required>
+                    <span>페이지</span>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>후가공</label>
+                <div class="post-process">
+                    <span><input type="radio" name="process" value="무광 코팅">무광 코팅</span>
+                    <span><input type="radio" name="process" value="에폭시">에폭시</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-section">
+            <div class="price-details">
+                <div class="price-row">
+                    <span>용지대</span>
+                    <span class="price" id="paperPrice">₩0</span>
+                </div>
+                <div class="price-row">
+                    <span>인쇄비</span>
+                    <span class="price" id="printPrice">₩0</span>
+                </div>
+                <div class="price-row">
+                    <span>후가공비</span>
+                    <span class="price" id="processPrice">₩0</span>
+                </div>
+                <div class="price-row">
+                    <span>판비</span>
+                    <span class="price" id="panPrice">₩0</span>
+                </div>
+                <div class="price-row">
+                    <span>제본비</span>
+                    <span class="price" id="bookbindingPrice">₩300,000</span>
+                </div>
+                <div class="price-row total">
+                    <span>결제금액</span>
+                    <span class="price" id="totalPrice">₩300,000</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="quote-button">장바구니</button>
+                <button class="order-button">바로주문</button>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <p>Tel 02-1234-1234</p>
+        <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
+    </div>
+    <script src="./Home/Home.js"></script>
+</body>
+</html>
