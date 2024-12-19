@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (paperSize === 'A4') {
             paperSizePrice = 16;
-            printPaperSizePrice = 8;
+            printPaperSizePrice = 16;
         } else if (paperSize === 'A5') {
             paperSizePrice = 32;
-            printPaperSizePrice = 8;
+            printPaperSizePrice = 16;
         } else if (paperSize === 'B6') {
             paperSizePrice = 32;
-            printPaperSizePrice = 8;
+            printPaperSizePrice = 32;
         } else if (paperSize === 'B5') {
             paperSizePrice = 32;
             printPaperSizePrice = 16;
@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         if (role === 'admin') {
+            console.lof('조건문은 들어옴');
             const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
         
