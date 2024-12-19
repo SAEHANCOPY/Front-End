@@ -15,13 +15,16 @@
             <a href="#" id="loginLink" class="nav-item">로그인</a>
             <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
             <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
-            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Noticelist/Noticelist.html" id= "Noticelist" class="nav-item">공지</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
     <main class="container">
         <h1 id="noticeTitle"></h1>
         <p id="noticeDate" class="notice-date"></p>
+        <div id="adminControls" style="display: none;">
+            <button id="deleteBtn" class="admin-btn">삭제</button>
+        </div>        
         <div id="noticeContent"></div>
         <button id="backBtn" class="back-btn">목록으로</button>
     </main>

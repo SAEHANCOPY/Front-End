@@ -93,6 +93,19 @@ h1 {
     background-color: #A66C3E;
 }
 
+.delete-button {
+    padding: 6px 12px;
+    background-color: #B87C4E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #A66C3E;
+}
+
 .bottom-container {
     background-color: #C7C7C7;
     display: flex;

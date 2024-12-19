@@ -13,8 +13,9 @@
         </div>
         <nav class="main-nav">
             <a href="#" id="loginLink" class="nav-item">로그인</a>
-            <a href="../Adminorderlist/Adminorderlist.html" class="nav-item">주문 관리</a>
-            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
+            <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
+            <a href="../Noticelist/Noticelist.html" id= "Noticelist" class="nav-item">공지</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
@@ -26,15 +27,18 @@
         <div class="status-update">
             <label for="statusSelect">상태 변경:</label>
             <select id="statusSelect">
+                <option value="입금 대기">입금 대기</option>
                 <option value="주문 접수">주문 접수</option>
-                <option value="제작 중">제작 중</option>
-                <option value="배송 준비">배송 준비</option>
                 <option value="배송 중">배송 중</option>
                 <option value="배송 완료">배송 완료</option>
             </select>
             <button id="updateStatusBtn">상태 업데이트</button>
         </div>
         <button id="backBtn" class="back-btn">목록으로 돌아가기</button>
+    </div>
+    <div class="bottom-container">
+        <p>Tel 02-1234-1234</p>
+        <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
     </div>
     <script src="Adminorder.js"></script>
 </body>

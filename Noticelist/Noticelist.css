@@ -85,15 +85,27 @@ h1 {
     font-size: 18px;
     color: #333;
     text-decoration: none;
+    flex-grow: 1;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .notice-title:hover {
     color: #B87C4E;
 }
 
+.notice-info {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .notice-date {
     font-size: 14px;
     color: #666;
+    margin-right: 10px;
 }
 
 .delete-btn {

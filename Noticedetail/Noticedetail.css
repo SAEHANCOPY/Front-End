@@ -40,8 +40,9 @@ body {
 }
 
 .container {
+    position: relative;
     flex: 1;
-    max-width: 800px;
+    width: 800px;
     margin: 40px auto;
     padding: 20px;
     background-color: white;
@@ -66,6 +67,9 @@ h1 {
 }
 
 .back-btn {
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
     padding: 10px 20px;
     background-color: #B87C4E;
     color: white;
@@ -87,4 +91,25 @@ h1 {
     padding-right: 70px;
     font-size: 13px;
     height: 70px;
+}
+
+#adminControls {
+    position: absolute;
+    top: 30px; 
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.admin-btn {
+    padding: 10px 20px;
+    background-color: #B87C4E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-btn:hover {
+    background-color: #A66C3E;
 }

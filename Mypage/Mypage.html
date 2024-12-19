@@ -15,7 +15,7 @@
             <a href="#" id="loginLink" class="nav-item">로그인</a>
             <a href="../Cartlist/Cartlist.html" class="nav-item">장바구니</a>
             <a href="../Orderlistpage/Orderlist.html" class="nav-item">주문 목록</a>
-            <a href="../Noticelist/Noticelist.html" class="nav-item">공지</a>
+            <a href="../Noticelist/Noticelist.html" id= "Noticelist" class="nav-item">공지</a>
             <a href="../Mypage/Mypage.html" class="nav-item">마이페이지</a>
         </nav>
     </header>
@@ -46,9 +46,20 @@
                 <label for="phone">전화번호</label>
                 <input type="tel" id="phone" name="phone">
             </div>
+            <div class="form-group postcode-group">
+                <label for="postcode">우편번호</label>
+                <div class="input-with-button">
+                    <input type="text" id="postcode" name="postcode" placeholder="우편번호" readonly required>
+                    <button type="button" id="searchAddressBtn" onclick="searchAddress()">검색</button>
+                </div>
+            </div>
             <div class="form-group">
-                <label for="address">주소</label>
-                <input type="text" id="address" name="address">
+                <label for="address">기본 주소 *</label>
+                <input type="text" id="address" name="address" placeholder="기본 주소" readonly required>
+            </div>
+            <div class="form-group">
+                <label for="detailAddress">상세 주소 *</label>
+                <input type="text" id="detailAddress" name="detailAddress" placeholder="상세 주소" required>
             </div>
             <button type="submit">저장</button>
         </form>
@@ -58,5 +69,17 @@
         <p>(10490) 경기도 고양시 덕양구 서정로 11-12</p>
     </div>
     <script src="./Mypage.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function searchAddress() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    document.getElementById('postcode').value = data.zonecode; // 우편번호
+                    document.getElementById('address').value = data.address; // 기본 주소
+                    document.getElementById('detailAddress').focus(); // 상세 주소에 포커스
+                }
+            }).open();
+        }
+    </script>
 </body>
 </html>
