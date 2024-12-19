@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
     const token = localStorage.getItem('authToken');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const role = localStorage.getItem('role');
 
     // 사용자 정보 가져오기 함수
     async function fetchUserInfo() {
@@ -147,10 +150,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // 초기 사용자 정보 가져오기
     await fetchUserInfo();
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

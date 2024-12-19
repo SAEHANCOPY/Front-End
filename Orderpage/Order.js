@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // URL 파라미터에서 주문 정보 가져오기
     const urlParams = new URLSearchParams(window.location.search);
     const orderDetails = JSON.parse(decodeURIComponent(urlParams.get('orderDetails')));
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const token = localStorage.getItem('authToken');
+    const role = localStorage.getItem('role');
 
     // 주문 요약 표시
     const orderSummary = document.getElementById('orderSummary');
@@ -85,10 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const token = localStorage.getItem('authToken');
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

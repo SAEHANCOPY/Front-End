@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const shippingDetails = document.getElementById('shippingDetails');
     const orderStatus = document.getElementById('orderStatus');
     const accountDetails = document.getElementById('accountDetails');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const role = localStorage.getItem('role');
 
     if (!orderId) {
         orderSummary.innerHTML = '<p>주문 ID가 제공되지 않았습니다.</p>';
@@ -99,10 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 주문 단건 조회 호출
     fetchOrderDetails(orderId);
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

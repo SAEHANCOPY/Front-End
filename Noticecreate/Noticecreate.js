@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelBtn');
     const apiUrl = 'https://www.saehan-pulis-hing.com/public/createPost.php'; // API URL
     const token = localStorage.getItem('authToken'); // 사용자 토큰
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const role = localStorage.getItem('role');
 
     noticeForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -47,10 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = '../Noticelist/Noticelist.html';
         }
     });
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

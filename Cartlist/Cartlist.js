@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const orderTableBody = document.getElementById('orderTableBody');
     const token = localStorage.getItem('authToken');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const role = localStorage.getItem('role');
 
     let currentPage = 1; // 현재 페이지 번호
     const rowsPerPage = 10; // 한 페이지에 표시할 행 수
@@ -133,10 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 초기 주문 목록 표시
     fetchOrders(currentPage);
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

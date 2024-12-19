@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     const deleteBtn = document.getElementById('deleteBtn');
     const token = localStorage.getItem('authToken');
     const role = localStorage.getItem('role');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
 
     // URL에서 공지사항 ID 가져오기
     const urlParams = new URLSearchParams(window.location.search);
@@ -102,10 +104,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             alert("공지사항 삭제 중 오류가 발생했습니다.");
         }
     }
-
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

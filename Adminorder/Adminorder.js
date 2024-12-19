@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusSelect = document.getElementById('statusSelect');
     const updateStatusBtn = document.getElementById('updateStatusBtn');
     const backBtn = document.getElementById('backBtn');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const role = localStorage.getItem('role');
 
     // URL에서 주문 ID 가져오기
     const urlParams = new URLSearchParams(window.location.search);
@@ -181,10 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 초기 주문 상세 정보 렌더링
     fetchOrderDetails(orderId);
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

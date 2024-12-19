@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const token = localStorage.getItem('authToken');
     const role = localStorage.getItem('role');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
 
     let orders = []; // 전역 변수 orders 선언
     let currentPage = 1; // 현재 페이지 번호
@@ -106,11 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 초기 주문 목록 가져오기
     fetchOrders();
-
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리

@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('authToken');
     const isAdmin = localStorage.getItem('role') === 'admin';
     const role = localStorage.getItem('role');
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item');
 
     // 공지 데이터를 저장할 변수
     let notices = [];
@@ -133,9 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 초기 공지사항 가져오기
     fetchNotices();
-
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item');
 
     if (token) {
         loginLink.textContent = '로그아웃';

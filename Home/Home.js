@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const loginLink = document.getElementById('loginLink');
+    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
+    const token = localStorage.getItem('authToken');
+    const role = localStorage.getItem('role');
     // 가격 계산 함수
     function calculatePrices() {
         // 기본 가격 설정
@@ -216,11 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const orderDetailsParam = encodeURIComponent(JSON.stringify(orderDetails));
         window.location.href = `../Orderpage/Order.html?orderDetails=${orderDetailsParam}`;
     });
-    
-    const loginLink = document.getElementById('loginLink');
-    const restrictedLinks = document.querySelectorAll('.main-nav .nav-item'); // 모든 네비게이션 링크
-    const token = localStorage.getItem('authToken');
-    const role = localStorage.getItem('role');
 
     if (token) {
         // 토큰이 존재하면 로그인 상태로 처리
@@ -231,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             logout();
         });
 
-        // 상단 바 수정: userId가 1102일 경우
+        
         if (role === 'admin') {
             const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
