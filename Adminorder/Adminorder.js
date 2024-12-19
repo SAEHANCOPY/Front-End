@@ -196,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 상단 바 수정: userId가 1102일 경우
         if (role === 'admin') {
-            const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
-            const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
+            const cartLink = document.querySelector('.main-nav a[href*="cartlist"]');
+            const orderListLink = document.querySelector('.main-nav a[href*="orderlist"]');
         
             // 기존 링크를 숨기고 새로운 링크 추가
             if (cartLink) cartLink.remove();
@@ -210,11 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
             orderConfirmLink.className = 'nav-item';
         
             // 공지 링크를 기준으로 이전에 추가
-            const noticeLink = document.querySelector('.main-nav a[href*="Noticelist"]');
+            const noticeLink = document.querySelector('.main-nav a[href*="noticelist"]');
             if (noticeLink) {
                 nav.insertBefore(orderConfirmLink, noticeLink);
             }
-        }        
+        }       
     } else {
         // 토큰이 없으면 로그인 링크 유지
         redirectToLogin();

@@ -145,9 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (role === 'admin') {
-            const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
-            const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
+            const cartLink = document.querySelector('.main-nav a[href*="cartlist"]');
+            const orderListLink = document.querySelector('.main-nav a[href*="orderlist"]');
         
+            // 기존 링크를 숨기고 새로운 링크 추가
             if (cartLink) cartLink.remove();
             if (orderListLink) orderListLink.remove();
         
@@ -157,7 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
             orderConfirmLink.textContent = '주문 관리';
             orderConfirmLink.className = 'nav-item';
         
-            const noticeLink = document.querySelector('.main-nav a[href*="Noticelist"]');
+            // 공지 링크를 기준으로 이전에 추가
+            const noticeLink = document.querySelector('.main-nav a[href*="noticelist"]');
             if (noticeLink) {
                 nav.insertBefore(orderConfirmLink, noticeLink);
             }
