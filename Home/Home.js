@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
             orderConfirmLink.className = 'nav-item';
         
             // 공지 링크를 기준으로 이전에 추가
-            const noticeLink = document.querySelector('.main-nav a[href*="Noticelist"]');
+            const noticeLink = document.querySelector('.main-nav a[href*="noticelist"]');
             if (noticeLink) {
                 nav.insertBefore(orderConfirmLink, noticeLink);
             }
