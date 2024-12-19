@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         if (role === 'admin') {
-            console.lof('조건문은 들어옴');
+            console.log('조건문은 들어옴');
             const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
         
