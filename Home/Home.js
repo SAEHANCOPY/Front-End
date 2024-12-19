@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
             // 기존 링크를 숨기고 새로운 링크 추가
             if (cartLink) {
-                cartLink.remove
-                console.log('이거도 들어오나?')
+                cartLink.remove();
+                console.log('이거도 들어오나?');
             }
             if (orderListLink) orderListLink.remove();
         
