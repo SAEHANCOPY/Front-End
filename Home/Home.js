@@ -237,7 +237,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
         
             // 기존 링크를 숨기고 새로운 링크 추가
-            if (cartLink) cartLink.remove();
+            if (cartLink) {
+                cartLink.remove
+                console.log('이거도 들어오나?')
+            }
             if (orderListLink) orderListLink.remove();
         
             const nav = document.querySelector('.main-nav');
