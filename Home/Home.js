@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('조건문은 들어옴');
             const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
+            console.log(cartLink);
         
             // 기존 링크를 숨기고 새로운 링크 추가
             if (cartLink) {
