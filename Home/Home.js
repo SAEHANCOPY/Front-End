@@ -235,13 +235,12 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('조건문은 들어옴');
             const cartLink = document.querySelector('.main-nav a[href*="Cartlist"]');
             const orderListLink = document.querySelector('.main-nav a[href*="Orderlist"]');
-            console.log(cartLink);
+            console.log(document.querySelector('.main-nav')); // .main-nav가 존재하는지 확인
+            console.log(document.querySelector('.main-nav a')); // .main-nav 내부의 모든 <a> 태그 확인
+            console.log(cartLink); // Cartlist 링크 확인
         
             // 기존 링크를 숨기고 새로운 링크 추가
-            if (cartLink) {
-                cartLink.remove();
-                console.log('이거도 들어오나?');
-            }
+            if (cartLink) cartLink.remove();
             if (orderListLink) orderListLink.remove();
         
             const nav = document.querySelector('.main-nav');
